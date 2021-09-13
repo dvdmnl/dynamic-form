@@ -1,0 +1,134 @@
+{
+  "component": "Form",
+  "label": "My Dynamic Form",
+  "fields": [
+    {
+      "label": "Function Name",
+      "type": "text-box",
+      "defaultVal": "empty",
+      "required": true,
+      "model": "metadata.name",
+      "validationRules": [
+        {
+          "label": "Valid characters: a–z, 0–9, –",
+          "pattern": "^[a–z, 0–9, –]"
+        },
+        {
+          "label": "Must begin and end with: a–z, 0–9",
+          "pattern": "^[a–z, 0–9]"
+        },
+        {
+          "label": "Max length: 56",
+          "pattern": "^(?=.{0,56}$).*$"
+        }
+      ]
+    },
+    {
+      "label": "Description",
+      "type": "textarea",
+      "defaultVal": "empty",
+      "required": false,
+      "model": "spec.description"
+    },
+    {
+      "label": "Runtime",
+      "type": "dropdown",
+      "defaultVal": "Python 3.9",
+      "required": false,
+      "model": "spec.runtime",
+      "options": [
+        {
+          "label": "Go",
+          "value": "golang"
+        },
+        {
+          "label": "Java",
+          "value": "java"
+        },
+        {
+          "label": "NodeJs",
+          "value": "nodejs"
+        },
+        {
+          "label": "Python 3.7",
+          "value": "python:3.7"
+        },
+        {
+          "label": "Python 3.9",
+          "value": "python:3.9"
+        }
+      ]
+    },
+    {
+      "label": "Categories",
+      "type": "multiple-checkboxes",
+      "defaultVal": [],
+      "required": false,
+      "model": "metadata.categories",
+      "options" : [
+        {
+          "label": "Data Collection",
+          "value": "collect"
+        },
+        {
+          "label": "Data Processing",
+          "value": "process"
+        },
+        {
+          "label": "Analytics & Reporting",
+          "value": "report"
+        },
+        {
+          "label": "Sorting, filtering, tagging",
+          "value": "sort"
+        }
+      ]
+    },
+    {
+      "label": "Permissions",
+      "type": "text-box",
+      "defaultVal": "empty",
+      "required": true,
+      "model": "spec.serviceName",
+      "validationRules": [
+        {
+          "label": "Valid characters: a–z, 0–9, –",
+          "pattern": "^[a–z, 0–9, –]"
+        },
+        {
+          "label": "Must begin with: a–z",
+          "pattern": "^[a–z]"
+        },
+        {
+          "label": "Must end with: a–z, 0–9",
+          "pattern": "^[a–z, 0–9]"
+        },
+        {
+          "label": "Max length: 53",
+          "pattern": "^(?=.{0,53}$).*$"
+        }
+      ]
+    },
+    {
+      "label": "Permissions",
+      "type": "multiple-checkboxes",
+      "defaultVal": ["Read"],
+      "required": true,
+      "model": "spec.permissions",
+      "options" : [
+        {
+          "label": "Read files",
+          "value": "read"
+        },
+        {
+          "label": "Write files",
+          "value": "write"
+        },
+        {
+          "label": "Execute files",
+          "value": "execute"
+        }
+      ]
+    }
+  ]
+}
